@@ -7,6 +7,6 @@ function y = hpf_lpf(x,~)
 % Generated on: 21-Sep-2023 01:19:47
 
 Fs = 500; % Average sample rate
-y = highpass(x,0.7,Fs,'Steepness',0.95,'StopbandAttenuation',70);
+y = highpass(x,0.5,Fs,'Steepness',0.75,'StopbandAttenuation',70);
 
-y = lowpass(y,20,Fs,'Steepness',0.95,'StopbandAttenuation',80);
+y = lowpass(y,10,Fs,'Steepness',0.75,'StopbandAttenuation',70);
