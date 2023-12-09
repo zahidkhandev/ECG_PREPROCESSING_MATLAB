@@ -2,8 +2,8 @@ clc
 clear all;
 close all;
 
-folderType = 'AF';
-fileName = strcat('JS02677');
+folderType = 'SR';
+fileName = strcat('JS00236');
 matFileName = strcat(fileName, '.mat');
 heaFileName = strcat(fileName, '.hea');
 
@@ -12,9 +12,7 @@ data_path = fullfile('data/raw/', folderType, matFileName);
 data = load(data_path);
 
 ecg_orig = data.val(1, :);
-ecg_orig(isinf(ecg_orig)|isnan(ecg_orig)) = 0;
-
-
+ 
 fs = 125;
 N = length(ecg_orig);
 t = (0:N-1) / fs;
@@ -28,7 +26,6 @@ frequencies = f(1:N/2+1);
 % fs = 125;
 % N = length(ecg);
 % f = (0:N-1) * (fs / N);
-
 
 %Applying high pass and low pass filters
 hl_filter = hpf_lpf(ecg_orig, fs);
@@ -73,7 +70,6 @@ plot(t, waveletSignal);
 xlabel('Time (s)');
 ylabel('Amplitude (mV)');
 title('Wavelet Denoised');
-
 
 out = waveletSignal;
 

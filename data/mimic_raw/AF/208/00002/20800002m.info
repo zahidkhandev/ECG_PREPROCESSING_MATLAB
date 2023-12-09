@@ -1,0 +1,13 @@
+Source: record mimicdb/208/20800002  Start: [08:32:12.000 24/01/1995]
+val has 4 rows (signals) and 22500 columns (samples/signal)
+Duration:     3:00
+Sampling frequency: 125 Hz  Sampling interval: 0.008 sec
+Row	Signal	Gain	Base	Units
+1	II 	674	0	mV
+2	V 	658	0	mV
+3	PLETH 	2000	0	mV
+4	RESP 	2000	0	mV
+
+To convert from raw units to the physical units shown
+above, call the 'rdmat.m' function from the wfdb-matlab
+toolbox: https://physionet.org/physiotools/matlab/wfdb-app-matlab/
